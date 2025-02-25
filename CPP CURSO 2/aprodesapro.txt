@@ -1,0 +1,142 @@
+/******************************************************************************
+Algoritmo. Porcentaje de aprobados-desaprobados
+Const N = 45				//numero maximo por aula
+tipo
+	registro regAula
+		cadena: apellido 	//cadena de 20 caracteres
+		entero: nota		//nota final del curso
+	fin_registro
+tipo
+	array[1..N] de regAula: arrAula
+var
+	regAula: alumno
+	arrAula: lista
+	entero: aprobados, desaprobados
+inicio
+	//leer registro
+	escribir("Ingrese datos del alumno:")
+	i <- 1
+	mientras(hasta N)hacer
+		//iteracion
+		llamar_a leerRegistro(lista[i])
+		i <- i + 1
+	fin_mientras
+	
+	//escribir
+	i <- 1
+	mientras(hasta N)hacer
+		//iteracion
+		llamar_a escribirRegistro(lista[i])
+		i <- i + 1
+	fin_mientras
+
+fin
+
+def. prototipos
+procedimiento leerRegistro(E/S regAula: alumno)
+var
+inicio
+	leer(alumno.apellido)
+	leer(alumno.nota)
+fin_procedimiento
+
+procedimiento escribirRegistro(E regAula: alumno)
+var
+inicio
+	escribir("Apellido:", alumno.apellido)
+	escribir("Nota:", alumno.nota)
+fin_procedimento
+
+procedimiento calcularAprobadosDesaprobados
+var
+	entero: aprobados, desaprobados
+inicio
+	aprobados <- 0
+	desaprobados <- 0
+	i <- 1
+	//iterar lista para contar aprobados-desaprobados
+	Desde(hasta N) hacer
+		si(lista[i].nota <= 10)entonces
+			desaprobados <- desaprobados + 1
+		fin_si
+		aprobados <- aprobados + 1
+	fin_desde
+	//calcular porciento de aprobados y desaprobados
+	escribir("Aprobados	:", aprobados / N *100)
+	escribir("Desaprobados	:", desaprobados / N *100)
+fin_procedimiento
+
+*******************************************************************************/
+
+//Algoritmo. Porcentaje de aprobados-desaprobados
+#include <cstdlib>
+#include <iostream>
+//tipo
+	struct regAula{
+		char apellido[20];	 	//cadena de 20 caracteres
+		int nota;		        //nota final del curso
+	};//fin_registro
+//tipo
+//	array[1..N] de regAula: arrAula
+void leerRegistro(regAula &alumno);
+void escribirRegistro(regAula alumno);
+using namespace std;
+
+int main(int argc, char *argv[]){
+//var
+	const int N = 3;		//numero maximo por aula
+	regAula alumno[N];
+	int aprobados, desaprobados;
+	int i;
+//inicio
+	//leer registro
+	printf("Ingrese datos del alumno: \n");
+	i = 0;
+	while(i < N){//hacer
+		//iteracion
+		//llamar_a 
+		leerRegistro(alumno[i]);
+		i = i + 1;
+	}//fin_mientras
+	
+	//escribir
+	i = 0;
+	while(i < N){//hacer
+		//iteracion
+		//llamar_a 
+		escribirRegistro(alumno[i]);
+		i = i + 1;
+	}//fin_mientras
+	   
+	 //escribir Porcentaje 
+    aprobados = 0;
+	desaprobados = 0;
+	i = 0;
+	//iterar lista para contar aprobados-desaprobados
+	 while(i < N){//hacer
+		if(alumno[i].nota <= 10){//entonces
+			desaprobados = desaprobados + 1;
+		}//fin_si
+		else{//entonces
+		aprobados = aprobados + 1;
+		}//fin_si
+		i = i + 1;
+	}//fin_mientras
+	printf("Aprobados: %d\n", aprobados / N*100);
+	printf("Desaprobados: %d", desaprobados/ N*100);
+}//fin
+//def. prototipos
+void leerRegistro(regAula &alumno){
+//var
+//inicio
+	scanf("%s", alumno.apellido);
+	scanf("%d", &alumno.nota);
+}//fin_procedimiento
+
+void escribirRegistro(regAula alumno){
+//var
+//inicio
+	printf("Apellido: %s", alumno.apellido);
+	printf("        Nota: %d", alumno.nota);
+	printf("\n");
+}//fin_procedimento

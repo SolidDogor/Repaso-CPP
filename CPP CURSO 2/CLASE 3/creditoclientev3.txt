@@ -1,0 +1,55 @@
+Algoritmo. credito cliente v.3 Listas
+const M <- 25
+tipo
+	regristo: regCliente
+		entero: id
+		real: credito
+		logico: cancelado
+	fin_registro
+tipo
+	array[1..M] de regCliente: lstCliente
+var
+	regCliente: cliente, customer
+	lstCliente: lista
+	entero: i
+inicio
+	//leer registro
+	escribir("Ingrese datos cliente: ")
+	i <- 1
+	mientras( hasta M)hacer
+		//iteracion
+		llamar_a leeRegristro(lista[i])
+
+		i <- i + 1
+	fin mientras
+
+	customer <- cliente
+
+	//escribir - visualizar
+	i <- 1
+	mientras( hasta M)hacer
+		//iteracion
+		llamar_a escribirRegristro(lista[i])
+
+		i <- i + 1
+	fin mientras
+
+fin
+def. prototipos
+procedimiento leeRegistro(E/S regCliente: cli)
+var
+	
+inicio
+	leer(cli.id)
+	leer(cli.credito)
+	leer(cli.cancelado)
+fin_procedimiento
+
+procedimiento escribirRegistro(E regCliente: cli)
+var
+	
+inicio
+	escribir("Codigo   : ", cli.id)
+	escribir("Credito  : ", cli.credito)
+	escribir("Cancelado: ", cli.cancelado)
+fin_procedimiento

@@ -1,0 +1,40 @@
+Tema:Estructuras Repetitivas con condiconales
+  sintaxis
+  mientras <condición>  var1 opr var2
+    acciones
+  fin de mientras
+
+* Variables Importantes dentro de un ciclo repetitivo
+  *Variables Contador:Permiten incrementar su valor mediante
+   un dato fijo.
+
+   sintaxis:
+   variable=variable+valor fijo
+   cpm=0 
+   inicio
+       cpm=cpm+1
+   repetir   
+*Variable acumulador:Permiten acumular un valor variable(entero,
+real,cadena).
+   sintaxis:
+   variable=variable+valor variable
+   atv=0
+   inicio
+      atv=act+venta
+   repetir
+
+
+
+
+
+
+  
+
+ 
+
+
+
+
+ 
+          
+  

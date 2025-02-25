@@ -1,0 +1,25 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+bool multiplo_de(int a, int b) {
+	return (a % b == 0 ? 1 : 0);;
+}
+
+void main() {
+	int a, b, n;
+	for (a = 1; a <= 9; a++) {
+		for (b = 0; b <= 9; b++) {
+			n = b + 3 * 10 + a * 100 + 4 * 1000 + b * 10000 + a * 100000;
+			if (multiplo_de(n, 45) == 1) {
+				cout << "a: " << a << endl;
+				cout << "b: " << b << endl;
+				cout << "a+b= " << a + b << endl << endl;
+			}
+		}
+	}
+
+
+	cout << endl;
+	system("pause");
+}

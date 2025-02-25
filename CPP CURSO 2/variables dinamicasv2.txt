@@ -1,0 +1,45 @@
+/******************************************************************************
+Algoritmo. Variables Dinamicas v.2
+tipo
+    puntero_a entero: punt
+var
+    punt:p, q
+inicio
+    //inicializar
+    p <- NULL
+    q <- NULL
+    
+    p <- reservar(entero)           //0x558002d5aeb0 (+4 bytes)
+    
+    escribir("valor de p [Dir. mem.]: ", p)
+    *p <- 18
+    escribir("valor apuntado: ", *p)
+    
+fin
+
+*******************************************************************************/
+//Algoritmo. Variables Dinamicas v.2
+#include<cstdlib>
+#include <iostream>
+//tipo
+//    puntero_a entero: punt
+using namespace std;
+
+int main(int argc, char *argv[]){
+//var
+    int *p, *q;
+//inicio
+    //inicializar
+    p = NULL;
+    q = NULL;
+    
+    p = (int*)malloc(sizeof(int));      //0x558002d5aeb0 (+4 bytes)
+                                        //memory allocation tamaño (entero)
+                                        //malloc(sizeof(int))
+    printf("valor de p [Dir. mem.]: %p\n", p);
+    *p = 18;
+    printf("valor apuntado: %d\n", *p);
+    printf("valor apuntado: %d\n", *p *2);
+    printf("valor apuntado: %d\n", *p + *q);
+
+}//fin

@@ -1,0 +1,37 @@
+1. Analisis.
+	
+	Estructura de datos (Arrays)
+	Procesos:
+	Descripcion de elementos del proceso.
+
+	Reglas de negocio.
+	OCL
+
+	Especificaciones de E/S
+	Entradas:
+	Salidas:
+
+
+2. Diseño.
+Algoritmo, <nombre>
+tipo
+	
+var
+
+inicio
+
+
+
+
+fin
+def. prototipos
+
+
+
+
+3. Implementacion.
+3. a. CPP
+
+3. b. Python
+
+3. c. PHP

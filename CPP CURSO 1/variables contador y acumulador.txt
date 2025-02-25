@@ -1,0 +1,19 @@
+Variables Importes
+1.1 Variable tipo contador
+   variable=variable + valor
+   
+   inicio de repeticiones
+      vc=vc+1   ,  vc++
+      2
+      1
+   fin de repeticiones
+
+1.2 Variable tipo acumulador
+    variable=variable + valor variables
+    
+   inicio de repeticiones
+
+     vae=vae+edad   ,  vae+=edad
+
+   fin de repeticiones
+    

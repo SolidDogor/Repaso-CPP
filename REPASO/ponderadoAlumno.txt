@@ -1,0 +1,20 @@
+#include <iostream>
+
+using namespace std;
+
+int main() {
+	int notaPractica, notaTeorica, notaParticipacion;
+	float notaFinal;
+	cout<<"Ingrese la nota de practicas del alumno: ";cin>>notaPractica;
+	cout<<"Ingrese la nota teórica del alumno: ";cin>>notaTeorica;
+	cout<<"Ingrese la nota de participación del alumno: ";cin>>notaParticipacion;
+
+	notaPractica *= 0.3;
+	notaTeorica *= 0.6;
+	notaParticipacion *= 0.1;
+	notaFinal = notaPractica + notaTeorica + notaParticipacion;
+	
+	cout<<"Nota final: "<<notaFinal<<endl;
+
+	return 0;
+}

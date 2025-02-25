@@ -1,0 +1,95 @@
+Estructura de datos: Array 1D
+
+Definición: "Conjunto de elemenos, homogéneos, finito y ordenado"
+
+Almacenar y visualizar 5 notas de prácticas calificadas
+
+Sintaxis:
+Algoritmo. Notas Pract.Calif v.1
+tipo
+	array[1..5] de real: arrNota
+var
+	arrNota: vector
+inicio
+	//inicializar
+	vector[1] <- 13.0
+	vector[2] <- 14.0
+	vector[3] <- 12.5
+	vector[4] <- 05.0
+	vector[5] <- 19.0
+
+	//visualizar
+	escribir(vector[1])
+	escribir(vector[2])
+	escribir(vector[3])
+	escribir(vector[4])
+	escribir(vector[5])
+
+fin
+
+****************************************************************
+
+Algoritmo. Notas Pract.Calif v.2
+tipo
+	array[1..5] de real: arrNota
+var
+	arrNota: vector
+	entero: i
+inicio
+	//op. lectura
+	escribir("Ingrese [5] notas: ")
+	i <- 1
+	mientras( hasta 5) hacer
+		//iteración
+		leer(vector[i])
+
+		i <- i + 1
+	fin_mientras
+
+	//op. escritura
+	i <- 1
+	mientras( hasta 5) hacer
+		//iteración
+		escribir(vector[i])
+
+		i <- i + 1
+	fin_mientras
+
+fin
+
+****************************************************************
+
+Algoritmo. Notas Pract.Calif v.3
+tipo
+array[1..5] de real: arrNota
+var
+	arrNota: vector
+	entero: i
+inicio
+	//op. lectura
+	escribir("Ingrese [5] notas: ")
+    llamar_a LeerArray
+    
+	//op. escritura
+	i <- 1
+	mientras( hasta 5) hacer
+		//iteración
+		escribir(vector[i])
+
+		i <- i + 1
+	fin_mientras
+
+fin
+def. de prototipos
+procedimiento LeerArray(E/S arrNota: vec)
+var
+    entero:i
+inicio
+    i <-1
+    mientras( hasta 5)hacer
+        //iteracion
+        Leer(vector[i])
+    
+        i <- i + 1
+    fin_mientras
+fin_procedimiento

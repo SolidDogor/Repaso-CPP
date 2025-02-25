@@ -1,0 +1,172 @@
+/******************************************************************************
+Algoritmo. Nodos TDA v.1
+tipo
+	puntero_a nodo: punt
+    
+    registro: nodo
+    	entero: dato
+    	punt: enlace
+    fin_registro
+var
+	punt: cab, aux
+inicio
+	//inicializar
+    cab <- NULL
+    aux <- NULL
+    
+    //1er nodo - nuevo
+    aux := nuevoNodo( 100 )
+
+    //enlazar nodo
+    llamar_a enlazarNodo(cab, aux)
+    
+    //2do nodo - nuevo
+    aux := nuevoNodo( 200 )
+    
+    //enlazar nodo
+    llamar_a enlazarNodo(cab, aux)
+    
+    //3er nodo - nuevo
+    aux := nuevoNodo( 300 )
+    
+    //enlazar nodo
+    llamar_a enlazarNodo(cab, aux)
+    
+    //4to nodo - nuevo
+    aux := nuevoNodo( 400 )
+    
+    //enlazar nodo
+    llamar_a enlazarNodo(cab, aux)
+    
+    //consultar nodo
+    aux := cab
+    escribir(aux->dato)	//200
+    aux := aux -> enlace
+    escribir(aux->dato) //100
+	
+fin
+def. prototipos
+procedimiento nuevoNodo( S nodo: temp; E entero: info)
+var
+
+inicio
+    aux <- reservar(nodo)
+	//configurar nodo
+    temp->dato := info
+    temp->enlace := NULL
+fin_procedimiento
+
+punt: funcion nuevoNodo( E entero: info)
+var
+    punt: temp
+inicio
+    temp <- reservar(nodo)
+	//configurar nodo
+    temp->dato := info
+    temp->enlace := NULL
+    
+    devolver(temp)
+fin_funcion
+
+procedimiento enlazarNodo(E/S punt: cima; E punt: temp)
+var
+
+inicio
+    si(cima = NULL)entonces
+        cima := temp
+        temp := NULL
+    si_no
+        temp->enlace := cima
+        cima := temp
+        temp := NULL
+    fin_si
+fin_procedimiento
+
+*******************************************************************************/
+//Algoritmo. Nodos TDA v.1
+#include <cstdlib>
+#include <iostream>
+//tipo
+//	puntero_a nodo: punt
+
+    struct nodo{
+    	int dato;
+    	nodo *enlace;
+    };//fin_registro
+nodo *nuevoNodo( int info);
+void enlazarNodo(&cab, aux);
+using namespace std;
+
+int main(int argc, char *argv[]){
+//var
+	nodo *cab, *aux;
+//inicio
+	//inicializar
+    cab = NULL;
+    aux = NULL;
+    
+    //1er nodo - nuevo
+    aux = nuevoNodo( 100);
+    
+    //enlazar nodo
+    //llamar_a
+    enlazarNodo(&cab, aux);
+    
+    //2do nodo - nuevo
+    aux = nuevoNodo( 200);
+    
+    //enlazar nodo
+    //llamar_a
+    enlazarNodo(&cab, aux);
+    
+    //3er nodo - nuevo
+    aux = nuevoNodo( 300);
+    
+    //enlazar nodo
+    //llamar_a
+    enlazarNodo(&cab, aux);
+    
+    //4to nodo - nuevo
+    aux = nuevoNodo( 400);
+    
+    //enlazar nodo
+    //llamar_a
+    enlazarNodo(&cab, aux);
+    
+    //consultar nodo
+    aux = cab;
+    printf("%d\n", aux->dato);                    //400
+    aux = aux->enlace;
+    printf("%d\n", aux->dato);                    //300
+    aux = cab;
+    printf("%d\n", aux->dato);                    //200
+    aux = cab;
+    printf("%d\n", aux->dato);                    //100
+    
+	 return EXIT_SUCCESS;
+}//fin
+//def. prototipos
+nodo *nuevoNodo( int info){
+//var
+    nodo *temp;
+//inicio
+    temp = (nodo *)malloc(sizeof(nodo));
+	//configurar nodo
+    temp->dato = info;
+    temp->enlace = NULL;
+    
+    return (temp);
+}//fin_funcion
+
+void enlazarNodo(nodo **cima, nodo *temp){
+//var
+//inicio
+    if(*cima == NULL){//entonces
+        *cima = temp;
+        temp = NULL;
+    }else{
+        temp->enlace = *cima;
+        *cima = temp;
+        temp = NULL;
+    }//fin_si
+}//fin_procedimiento

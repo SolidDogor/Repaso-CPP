@@ -1,0 +1,56 @@
+/**********************************************************************
+tipo
+	registro regArticulo
+		entero: codigo //identificador articulo
+		real: precio //precio venta articulo
+		entero: cantidad //ítems de venta
+	fin_registro
+tipo
+	array[1..20] de regArticulo: arrArticulo
+var
+	arrArticulo: articulo //vector de artículos – 20 registros
+**********************************************************************/
+
+//Algoritmo de prueba
+
+#include <cstdlib>
+#include <iostream>
+//tipo
+	struct regArticulo{
+		int codigo;
+		float precio;
+		int cantidad;
+	};//fin_registro
+using namespace std;
+
+int main(int argc, char *argv[]){
+//tipo
+//	array[1..20] de regArticulo: arrArticulo
+//var
+//    const int N = 3;
+	struct regArticulo articulo;
+//	int i;
+//inicio
+	printf("Ingrese los datos del articulo: \n");
+//	i = 0;
+//	while(i < N){//hacer
+		//iteracion
+		scanf("%d", &articulo.codigo);
+		scanf("%f", &articulo.precio);
+		scanf("%d", &articulo.cantidad);
+//		i++;
+//	}//fin_mientras
+
+	//escribir
+//	i = 0;
+//	while(i < N){//hacer
+		//iteracion
+		printf("Codigo del articulo  : %d\n", articulo.codigo);
+		printf("Precio del articulo  : %.2f\n", articulo.precio);
+		printf("Cantidad del articulo: %d\n", articulo.cantidad);
+//		i++;
+//	}//fin_mientras
+
+	return EXIT_SUCCESS;
+
+}//fin

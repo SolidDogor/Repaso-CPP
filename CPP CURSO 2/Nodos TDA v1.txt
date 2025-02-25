@@ -1,0 +1,31 @@
+Algoritmo. Nodos TDA v.1
+tipo
+	puntero_a nodo: punt
+    
+    registro: nodo
+    	entero: dato
+    	punt: enlace
+    fin_registro
+var
+	punt: cab, aux
+inicio
+	//inicializar
+    cab <- NULL
+    aux <- NULL
+    
+    //1er nodo - nuevo
+    aux <- reservar(nodo)		//Dir. Mem. valida
+	//configurar nodo
+    aux->dato := 100
+    aux->enlace := NULL
+    
+    //enlazar nodo
+    cab := aux
+    aux := NULL
+    
+    //consultar nodo
+    aux := cab
+    escribir(aux->dato)	//100
+	
+fin
+def. prototipos

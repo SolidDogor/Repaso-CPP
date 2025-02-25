@@ -1,0 +1,74 @@
+Arrays 2D Matrices (Tablas)
+
+Enunciado 1.b. Definir una estructura de datos que almacene y visualice las notas correspondientes a 5 Calificadas de un aula de 18 alumnos
+
+1. Análisis.
+
+			1	2	3	4	5
+			----------------------------------
+		1	xx	xx	xx	xx	xx
+		2	xx	xx	xx	xx	xx
+		3	xx	xx	xx	xx	xx
+			...
+		17	xx	xx	xx	xx	xx
+		18	xx	xx	xx	xx	xx
+			----------------------------------
+
+Definición
+	tipo
+		array[1..18; 1..5] de real: arrAula
+	var
+		arrAula: aula
+
+Operaciones:	-almacenar 5 notas PC, para 18 alumnos
+		-Visualizar lista de notas
+	OCL
+		Context: Notas Aula
+			self.nota: real
+			inv: 
+			self.nota.rango(0,20)
+
+	Especificaciones E/S
+	Entradas: Notas (5) notas de 18 alumnos, de tipo real
+	Salidas: Visualizar notas, de tipo real
+
+
+
+Diseño.
+Algoritmo. Notas aula
+const M <- 2, N <- 5
+tipo
+	array[1..M;1..N] de real: arrAula
+var
+	arrAula: aula
+	entero: i,j
+inicio
+	//op. de lectura
+	escribir("Ingrese notas alumno: ")
+	i <- 1
+	mientras( hasta M )hacer
+		j <- 1
+		mientras( hasta N ) hacer
+			//iteracion
+			leer(aula[i,j])
+
+			j <- j + 1
+		fin_mientras
+		i <- i + 1
+	fin_mientras
+	
+	//op. de escritura
+	i <- 1
+	mientras( hasta M )hacer
+		j <- 1
+		mientras( hasta N ) hacer
+			//iteracion
+			escribir(aula[i,j])
+
+			j <- j + 1
+		fin_mientras
+		i <- i + 1
+	fin_mientras
+
+fin
+def. prototipos

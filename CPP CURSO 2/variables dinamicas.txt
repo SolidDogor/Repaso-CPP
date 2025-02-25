@@ -1,0 +1,54 @@
+/******************************************************************************
+Algoritmo. Variables dinamicas
+tipo
+    puntero_a entero: punt
+var
+    punt: p,q
+    entero: a, b
+inicio
+    p <- NULL
+    a <- 16
+
+    p <- &a
+    
+    escribir("valor de  a: ", a)
+    escribir("Dir. mem. a: ", &a)
+    escribir("valor de  p: ", p)
+    
+    escribir("valor apuntado: ", *p)
+    *p <- 20
+    escribir("valor apuntado: ", *p)
+    escribir("valor de  a: ", a)
+
+
+fin
+
+*******************************************************************************/
+//Algoritmo. Variables dinamicas
+#include<cstdlib>
+#include <iostream>
+//tipo
+//    puntero_a entero: punt
+using namespace std;
+
+int main(int argc, char *argv[]){
+//var
+    int *p,*q;
+    int a, b;
+//inicio
+    p = NULL;
+    a = 16;
+    
+    p = &a;
+    
+    printf("valor de  a: %d\n", a);
+    printf("Dir. mem. a: %p\n", &a);
+    printf("valor de  p: %p\n", p);
+    
+    printf("valor apuntado: %d\n", *p);
+    *p = 20;
+    printf("valor apuntado: %d\n", *p);
+    printf("valor de  a: %d\n", a);
+
+    return EXIT_SUCCESS;
+}//fin

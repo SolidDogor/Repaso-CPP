@@ -1,0 +1,88 @@
+--------------------------------Tipo Registro--------------------------------
+
+Definicion: "Conjunto de datos heterogeneo y finito"
+
+Sintaxix:
+
+tipo
+	registro: identificador
+		tipo: miembro1
+		tipo: miembro2
+		...
+	fin_registro
+
+NOTA: acceso a los miembros de dato
+	"operador: ."
+
+Enunciado. Definir estructura de datos tipo registro, para almacenar informacion de un credito, cliente, luego visualizarlos.
+
+	Datos credito cliente
+		codigo
+		credito solicitado
+		indicador de pago
+
+1. Analisis
+	definir estructura
+	tipo
+		registro: regCliente
+			entero: id			//4 digitos
+			real: credito			//credito asignado
+			logico: cancelado		//indicador de pago
+		fin_registro
+	
+	operaciones: leer / escribir
+	
+	OCL.
+	Contexto: credito clliente.
+		self.codigo: entero			//identificador de 4 digitos
+		self.credito: real			//prestamo en moneda nacional
+		self.cancelado: logico			//indicador de devolucion de credito
+
+		Especificaciones de E/S
+		Entradas: datos de credito del cliente
+		Salidas: imprimir registro cliente
+
+2. Diseño
+
+Algoritmo. credito cliente
+tipo
+	regristo: regCliente
+		entero: id
+		real: credito
+		logico: cancelado
+	fin_registro
+var
+	regCliente: customer, cliente = {1111, 2000,00, falso}
+inicio
+	//leer - almacenar informacion
+	//cliente.id <- 111
+	//cliente.credito <- 2000.00
+	//cliente.cancelado <- falso
+
+	customer <- cliente
+
+	//escribir - visualizar
+	escribir("Codigo   : ", customer.id)
+	escribir("Credito  : ", customer.credito)
+	escribir("Cancelado: ", customer.cancelado)
+
+fin
+def. prototipos
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	

@@ -1,0 +1,30 @@
+-------------------------Estructura tipo Archivo-------------------------
+
+Caso 1: Acceso a dispositivo: modo escritura
+2. Diseño.
+Algoritmo. Escritura_Caracter_Dispositivo
+tipo
+	archivo_s de caracter: idFile
+var
+	idFile: idf
+	caracter: letra
+inicio
+	letra <- 'a'
+	
+	//paso 1: definir dispositivo, y obtener canal de comunicacion
+	abrir(idf, "datos.txt", ;)	//modo escritura (sobrescribe)
+
+	si(idf = NULL)entonces
+		escribir("Error de acceso")
+		salir()
+	fin_si
+
+	//paso 2: usar canal de comunicacion: escribir / leer
+	letra <- leerArchivo(idf)
+	escribir(letra)
+
+	//paso 3: cerrar el canal de comunicacion
+	cerrar(idf)
+
+
+fin

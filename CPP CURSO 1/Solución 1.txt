@@ -1,0 +1,33 @@
+#include <iostream>
+#include <conio.h>
+using namespace std;
+
+bool primo(int m) {
+	int c;
+	c = 0;
+
+	for (int i = 1; i <= m; i++) {
+		c = (m % i == 0 ? c + 1 : c);
+	}
+
+	return (c == 2 ? 1 : 0);;
+}
+
+void main() {
+	int nm, n, a, s;
+
+	s = 0;
+
+	for (a = 0; a <= 9; a++) {
+		for (int n = 1; n <= 9; n++) {
+			nm = a * (10 * n + a);
+			if (primo(nm) == 1) {
+				cout << n<<" ";
+				s = s + n;
+			}
+		}
+	}
+
+	cout << "\n" << s;
+	_getch();
+}
