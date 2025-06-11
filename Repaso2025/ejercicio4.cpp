@@ -69,8 +69,7 @@ void invertir(int* n) {
         contador++;
     }
 
-    int potenciaTemporal = pow(10,contador-1);
-    int unidad = num % potenciaTemporal;
+    int unidad = num / pow(10,contador);
 
     while (*n != 0) {
         int numTemporal = (*n % 10) * pow(10, contador);
@@ -78,7 +77,7 @@ void invertir(int* n) {
         *n /= 10;
         contador--;
     }
-
+    //Falta resolver
     std::cout << "El numero invertido es: " << resultado + unidad << std::endl;
 }
 
