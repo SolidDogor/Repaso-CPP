@@ -11,22 +11,27 @@ int main(){
 }
 
 bool leerEnteroSeguro(int& valor) {
-    std::cin >> valor;
+    std::string entrada;
+    std::getline(std::cin, entrada);
 
-    if (std::cin.fail()) {
-        std::cin.clear();   //Limpia el estado de error
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //Descarta entrada inválida
+    try {
+        size_t pos;
+        valor = std::stoi(entrada, &pos);
+        // Verificamos que no haya caracteres extra
+        if (pos != entrada.length()) {
+            throw std::invalid_argument("Caracteres sobrantes");
+        }
+        return true;
+    } catch (...) {
         return false;
     }
-
-    return true;
 }
 
 void menu(){
     std::cout << "Bienvenido al programa para mostrar características de un numero!" << std::endl;
     int num, opcion = 0;
     do{
-        std::cout << "Opciones \n 1.- Ingresar numero \n 2.- Salir del programa" << std::endl;
+        std::cout << "Opciones \n 1.- Ingresar numero entero \n 2.- Salir del programa" << std::endl;
         std::cout << "Ingrese su opcion: ";
         while (!leerEnteroSeguro(opcion)) std::cout << "Entrada invalida. Intente nuevamente: ";
         switch (opcion)
