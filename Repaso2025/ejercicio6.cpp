@@ -24,7 +24,7 @@ void menu(){
             break;
         case 2:
             system("cls");
-            std::cout << "Saliendo del programa...";
+            std::cout << "Saliendo del programa..." << std::endl;
             system("pause");
         default:
             std::cout << "Opcion invalida! Digite otra opcion.";
