@@ -5,6 +5,8 @@ void llenarArreglo(int* arr, int n);
 int sumarArreglo(int* arreglo, int cantidad);
 bool encontrarNumero(int* arreglo, int cantidad, int numero);
 void contarNumerosParesImpares(int* arreglo, int cantidad);
+void mostrarArreglo(int* arreglo, int cantidad);
+void ordenarSeleccion(int* arreglo, int cantidad);
 
 int main(){
     int cantidad = 0, numero = 0;
@@ -26,6 +28,12 @@ int main(){
     }
 
     contarNumerosParesImpares(arr,cantidad);
+
+    std::cout << "Mostrando arreglo" << std::endl;
+    mostrarArreglo(arr, cantidad);
+    ordenarSeleccion(arr, cantidad);
+    std::cout << "Mostrando arreglo ordenado" << std::endl;
+    mostrarArreglo(arr, cantidad);
 
     delete[] arr;
     return 0;
@@ -72,4 +80,29 @@ void contarNumerosParesImpares(int* arreglo, int cantidad){
 
     std::cout << "Cantidad de numeros pares dentro del arreglo: " << cantidadPares << std::endl;
     std::cout << "Cantidad de numeros impares dentro del arreglo: " << cantidadImpares << std::endl;
+}
+
+void mostrarArreglo(int* arreglo, int cantidad) {
+    for (int i = 0; i < cantidad; i++) {
+        std::cout << "Elemento " << (i + 1) << " : " << arreglo[i] << std::endl;
+    }
+}
+
+void ordenarSeleccion(int* arr, int cant) {
+    int temp = 0;
+    int minIndex = 0;
+    for (int i = 0; i < cant; i++) {
+        minIndex = i;
+        int j = i + 1;
+        while (j < cant) {
+            if (arr[j] < arr[minIndex]) {
+                minIndex = j;
+            }
+            j++;
+        }
+        // Intercambio
+        temp = arr[i];
+        arr[i] = arr[minIndex];
+        arr[minIndex] = temp;
+    }
 }
