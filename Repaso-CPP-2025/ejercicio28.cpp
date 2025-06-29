@@ -7,6 +7,7 @@ bool encontrarNumero(int* arreglo, int cantidad, int numero);
 void contarNumerosParesImpares(int* arreglo, int cantidad);
 void mostrarArreglo(int* arreglo, int cantidad);
 void ordenarSeleccion(int* arreglo, int cantidad);
+int* crearArregloMultiplo(int* arregloOriginal, int cantidad, int multiplo, int& cantidadMultiplos);
 
 int main(){
     int cantidad = 0, numero = 0;
@@ -35,6 +36,17 @@ int main(){
     std::cout << "Mostrando arreglo ordenado" << std::endl;
     mostrarArreglo(arr, cantidad);
 
+    int multiplo = 0;
+    std::cout << "Ingrese un numero para crear nuevo arreglo con sus multiplos: ";
+    std::cin >> multiplo;
+
+    int cantidadMultiplos = 0;
+    int* arrMultiplos = crearArregloMultiplo(arr, cantidad, multiplo, cantidadMultiplos);
+
+    std::cout << "Mostrando arreglo con multiplos de " << multiplo << std::endl;
+    mostrarArreglo(arrMultiplos, cantidadMultiplos);
+
+    delete[] arrMultiplos;
     delete[] arr;
     return 0;
 }
@@ -105,4 +117,18 @@ void ordenarSeleccion(int* arr, int cant) {
         arr[i] = arr[minIndex];
         arr[minIndex] = temp;
     }
+}
+
+int* crearArregloMultiplo(int* arregloOriginal, int cantidad, int multiplo, int& cantidadMultiplos) {
+    int* arregloNuevo = new int[cantidad];
+    cantidadMultiplos = 0;
+
+    for (int i = 0; i < cantidad; i++) {
+        if (arregloOriginal[i] % multiplo == 0) {
+            arregloNuevo[cantidadMultiplos] = arregloOriginal[i];
+            cantidadMultiplos++;
+        }
+    }
+
+    return arregloNuevo;
 }
