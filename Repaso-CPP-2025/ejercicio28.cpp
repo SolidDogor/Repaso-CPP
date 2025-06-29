@@ -4,6 +4,7 @@ int* crearArreglo(int n);
 void llenarArreglo(int* arr, int n);
 int sumarArreglo(int* arreglo, int cantidad);
 bool encontrarNumero(int* arreglo, int cantidad, int numero);
+void contarNumerosParesImpares(int* arreglo, int cantidad);
 
 int main(){
     int cantidad = 0, numero = 0;
@@ -19,10 +20,12 @@ int main(){
     std::cout << "Que numero desea buscar?" << std::endl;
     std::cin >> numero;
     if(encontrarNumero(arr,cantidad,numero)) {
-        std::cout << "El numero si se encuentra dentro del arreglo!" << std::endl;
+        std::cout << "El numero " << numero << " si se encuentra dentro del arreglo!" << std::endl;
     } else {
-        std::cout << "Numero no encontrado dentro de la funcion..." << std::endl;
+        std::cout << "Numero " << numero << " no encontrado dentro de la funcion..." << std::endl;
     }
+
+    contarNumerosParesImpares(arr,cantidad);
 
     delete[] arr;
     return 0;
@@ -55,4 +58,18 @@ bool encontrarNumero(int* arreglo, int cantidad, int numero){
         }
     }
     return false;
+}
+
+void contarNumerosParesImpares(int* arreglo, int cantidad){
+    int cantidadPares = 0, cantidadImpares = 0;
+    for (int i = 0; i < cantidad; i++){
+        if (arreglo[i] % 2 == 0){
+            cantidadPares++;
+        } else {
+            cantidadImpares++;
+        }
+    }
+
+    std::cout << "Cantidad de numeros pares dentro del arreglo: " << cantidadPares << std::endl;
+    std::cout << "Cantidad de numeros impares dentro del arreglo: " << cantidadImpares << std::endl;
 }
